@@ -4,10 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class indexController {
+public class ConferenciaController {
 
 	@RequestMapping(value = "/index")
-	public String home() {
-		return "home";
+	public String telaHome() {
+		return "index";
 	}
+
+	@RequestMapping(value = "/confListagem")
+	public String conferenciaListagem() {
+		return "conferenciaListagem";
+	}
+
 }

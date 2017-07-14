@@ -1,6 +1,4 @@
-package com.facom.SGCteam01.SGCTeam01.entity;
-
-import java.io.Serializable;
+package com.facom.SGCteam01.SGCTeam01.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,16 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Conferencia implements Serializable {
-
-	private static final long serialVersionUID = -9049472181631129533L;
+public class Conferencia {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@Column
-	private String nome;
+	private String nomeConferencia;
 
 	public Long getId() {
 		return id;
@@ -28,11 +24,11 @@ public class Conferencia implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeConferencia() {
+		return nomeConferencia;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeConferencia(String nomeConferencia) {
+		this.nomeConferencia = nomeConferencia;
 	}
 }
