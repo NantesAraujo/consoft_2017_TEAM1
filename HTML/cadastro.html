@@ -1,0 +1,153 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js" crossorigin="anonymous"></script>
+	
+	<script>
+		$(document).ready(function ($) {
+			$('#formUsuario').validator();
+		});
+	</script> 
+</head>
+
+<body>
+<content> 	         
+			
+</content>
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h2>Formulário de Cadastro</h2></div>
+        <div class="panel-body">
+
+            <div class="panel panel-default"> 
+                <div class="panel-heading"> <h4>Dados Pessoais</h4></div>
+                <div class="panel-body">
+                <form id="formUsuario" name="formUsuario" data-toggle="validator" role="form">
+
+                <div class="row">    
+                    <div class="col-xs-12 col-md-8">
+                        <label for="nome" class="control-label">Nome completo</label>
+                        <input type="nome" class="form-control" id="nome" placeholder="Informe o nome" required>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <label>Sexo</label>
+                    </div>
+                    <div class="radio">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender"   value="masculino" checked  > Masculino
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gender"  value="feminino"  >Feminino              
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                        <label for="rg">RG</label>
+                        <input type="rg" class="form-control" id="rg" placeholder="Informe o RG">
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <label for="orgao">Orgão Emissor</label>
+                        <input type="orgao" class="form-control" id="orgao" placeholder="Informe Orgão Emissor">
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <label for="emissao">Data de Emissão</label>
+                        <input type="emissao" class="form-control" id="emissao" placeholder="xx/xx/xxxx">
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col-xs-12 col-md-8">
+                        <label for="cpf">CPF</label>
+                        <input type="cpf" class="form-control" id="cpf" placeholder="Informe o CPF">
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="dataNascimento" placeholder="Informe a Data de nascimento">
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <div class="panel panel-default"> 
+            <div class="panel-heading"><h4>Endereço</h4></div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                        <label for="cep">CEP</label>
+                        <input type="text" class="form-control" id="cep" placeholder="Informe o CEP">
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <label for="estado">Estado</label>
+                        <input type="text" class="form-control" id="estado" placeholder="Informe o Estado">
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" placeholder="Informe a Cidade">
+                    </div>
+                </div>
+            
+            <div class="row">   
+                <div class="col-xs-12 col-md-8">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouro" placeholder="Informe Logradouro">
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" id="numero" placeholder="Informe o Número">
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Informe o Bairro">
+                </div>
+                <div class="col-xs-6">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Informe complemento">
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default"> 
+            <div class="panel-heading"><h4>Contato</h4></div>
+            <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" placeholder="Informe o telefone">
+                </div>
+                <div class="col-xs-6">
+                    <label for="celular">Celular</label>
+                    <input type="text" class="form-control" id="celular" placeholder="Informe o celular">
+                </div>
+            </div>    		 
+    	    </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <div class="help-block with-errors"></div>
+
+        </form>
+        </div>
+    </div>
+</div>	 
+</body>	   
+</html>
