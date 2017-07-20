@@ -1,0 +1,198 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js" crossorigin="anonymous"></script>
+	
+	<script>
+		$(document).ready(function ($) {
+			$('#formUsuario').validator();
+		});
+	</script> 
+</head>
+
+<body>
+<content> 	         
+			
+</content>
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h2>Estrutura do Artigo</h2></div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">      
+                    <label for="tamanho" class="col-sm-2 control-label">Tamanho do Artigo</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Dentro do estabelecido</option>
+                            <option>Fora do estabelecido</option>
+                        </select>
+                    </div>    
+                </div>
+                <div class="form-group">      
+                    <label for="imagens" class="col-sm-2 control-label">Número de Imagens</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Dentro do estabelecido</option>
+                            <option>Fora do estabelecido</option>
+                        </select>
+                    </div>    
+                </div>
+                <div class="form-group">      
+                    <label for="tabelas" class="col-sm-2 control-label">Número de Tabelas</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Dentro do estabelecido</option>
+                            <option>Fora do estabelecido</option>
+                        </select>
+                    </div>    
+                </div>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Avaliação</th> 
+                        <th>Extremamente Relevante</th> 
+                        <th>Relevante</th> 
+                        <th>Pouco Relevante</th> 
+                        <th>Não Relevante</th> 
+                    </tr>
+                    <tr>
+                        <th>Interesse</th> 
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Qualidade</th> 
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>    
+                        <th>Originalidade</th> 
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>    
+                        <th>No Geral</th> 
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="" checked  >
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Recomendação</th>
+                    </tr>    
+                    <tr>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="rejeitado" checked  >Rejeitado (-2)
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="rejeitado" checked  >Fracamente Rejeitado (-1)
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="rejeitado" checked  >Neutro (0)
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="rejeitado" checked  >Fracamente Aceito (1)
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="radio-inline">
+                                <input type="radio" name="gender" value="rejeitado" checked  >Fortemente Aceito (2)
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="texto"><h4><strong>Por favor, informe os pontos negativos do artigo. (Caso não tenha coloque: Não se aplica)</strong></h4>
+                    <textarea class="form-control" rows="3"> </textarea>
+                </div>
+                <div class="texto"><h4><strong>Por favor, informe os pontos positivos do artigo. (Caso não tenha coloque: Não se aplica)</strong></h4>
+                    <textarea class="form-control" rows="3"> </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submeter</button>
+                <div class="help-block with-errors"></div>
+
+            </form>
+        </div>
+    </div>
+</div>	 
+</body>	   
+</html>
