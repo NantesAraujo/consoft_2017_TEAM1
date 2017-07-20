@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js" crossorigin="anonymous"></script>
+	
+	<script>
+		$(document).ready(function ($) {
+			$('#formUsuario').validator();
+		});
+	</script> 
+</head>
+
+<body>
+<content> 	         
+			
+</content>
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h2>Submissão</h2></div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">      
+                    <label for="tamanho" class="col-sm-2 control-label">Escolha a área:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Selecione</option>
+                            <option>Artigo</option>
+                        </select>
+                    </div>    
+                </div>
+                <div class="form-group">      
+                    <label for="imagens" class="col-sm-2 control-label">Tipo de Submissão:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Selecione</option>
+                            <option>Artigo</option>
+                        </select>
+                    </div>    
+                </div>
+                <div class="form-group">
+                        <label for="titulo" class="col-sm-2 control-label">Título:</label>
+                        <div class="col-sm-10">
+                            <input type="titulo" class="form-control" id="titulo"
+                        </div> 
+                    </div>
+               <div class="texto"><h4><strong>Resumo (máximo 2000 caracteres):</strong></h4>
+                    <textarea class="form-control" rows="3"> </textarea>
+                </div>
+                <div class="texto"><h4><strong>Palavra-chave (máximo 10 palavras):</strong></h4>
+                    <textarea class="form-control" rows="3"> </textarea>
+                </div>
+                <div class="checkbox">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <label>
+                            <input type="checkbox" value="declaracao"> Declaro que li e estou de acordo com as regras para submissão de arquivos
+                        </label>
+                    </div>      
+                    </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+
+            </form>
+        </div>
+    </div>
+</div>	 
+</body>	   
+</html>
