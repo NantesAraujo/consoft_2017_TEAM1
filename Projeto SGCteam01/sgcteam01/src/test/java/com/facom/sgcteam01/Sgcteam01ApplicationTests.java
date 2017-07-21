@@ -1,4 +1,4 @@
-package com.facom.SGCteam01.SGCTeam01;
+package com.facom.sgcteam01;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SgcTeam01ApplicationTests {
+public class Sgcteam01ApplicationTests {
 
 	@Test
 	public void contextLoads() {
