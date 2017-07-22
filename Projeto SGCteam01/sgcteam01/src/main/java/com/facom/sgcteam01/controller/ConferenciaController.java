@@ -16,4 +16,9 @@ public class ConferenciaController {
 		return "login";
 	}
 
+	@RequestMapping("/conferencia")
+	public String abrirConferencia() {
+		return "cadastrarConferencia";
+	}
+
 }
