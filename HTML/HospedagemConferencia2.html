@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html>
+
+    <head>
+        <meta charset="utf-8"></meta>
+        <script type="text/javascript" src="../Kathyucia/js/jquery-1.9.1.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function($) {
+                $('#formUsuario').validator();
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                     <h2>Conferências</h2>
+                </div>
+            </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Nome Conferência</th> 
+                        <th>Ação</th> 
+                    </tr>
+                    <tr>
+                        <th>Sessão Científica - Facom</th> 
+                        <th> <button type="edit" class="btn btn-primary">Editar</button>
+                        <button type="delete" class="btn btn-primary">Deletar</button>
+                        <div class="help-block with-errors"></div></th>
+                        </tr>
+                        </th>
+                    </th>
+                    <tr>
+                        <th>Semana de Ensino, Pesquisa - UFMS</th> 
+                                                <th> <button type="edit" class="btn btn-primary">Editar</button>
+                        <button type="delete" class="btn btn-primary">Deletar</button>
+                        <div class="help-block with-errors"></div></th>
+                        </tr>
+                        </tr>
+                         <tr>
+                        <th>DC & Marvel - Núcleo de Heróis</th> 
+                                                <th> <button type="edit" class="btn btn-primary">Editar</button>
+                        <button type="delete" class="btn btn-primary">Deletar</button>
+                        <div class="help-block with-errors"></div></th>
+                        </tr>
+                        </tr>
+                        
+                         <button type="create" class="btn btn-primary">Criar Conferência</button>
+                <div class="help-block with-errors"></div>
+    </body>
+
+</html>
