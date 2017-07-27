@@ -27,73 +27,112 @@
         </content>
 
         <div class="container">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                     <h2>Cadastro Membro Comitê</h2>
-                </div>
-                <div class="panel-body">
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <form id="formUsuario" name="formUsuario" data-toggle="validator" role="form">
-
-                                <button type="submit" class="btn btn-primary">Procurar usuário</button>
-                                <p></p>
+            <div class="row">
+                <div class="col-md-9" role="main">
+                    <div class="bs-docs-section">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                 <h2>Cadastro Membro Comitê</h2>
+                            </div>
+                        </div>
 
 
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-8">
-                                        <label for="nome" class="control-label">Nome completo</label>
-                                        <input type="nome" class="form-control" id="nome" placeholder="Informe o nome" />
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <label for="nome" class="control-label">Nome Compleo:</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Informe o nome" />
+                            </div>
+                        </div>
 
-                                <div class="row">
-                                    <div class="col-xs-6 col-md-4">
-                                        <label for="rg">RG</label>
-                                        <input type="rg" class="form-control" id="rg" placeholder="Informe o RG" />
-                                    </div>
-                                    <div class="col-xs-6 col-md-4">
-                                        <label for="orgao">Orgão Emissor</label>
-                                        <input type="orgao" class="form-control" id="orgao" placeholder="Informe Orgão Emissor" />
-                                    </div>
-                                    <div class="col-xs-6 col-md-4">
-                                        <label for="emissao">Data de Emissão</label>
-                                        <input type="emissao" class="form-control" id="emissao" placeholder="xx/xx/xxxx" />
-                                    </div>
-                                </div>
+                        <br>
 
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-8">
-                                        <label for="cpf">CPF</label>
-                                        <input type="cpf" class="form-control" id="cpf" placeholder="Informe o CPF" />
-                                    </div>
-                                    <div class="col-xs-6 col-md-4">
-                                        <label for="dataNascimento">Data de Nascimento</label>
-                                        <input type="date" class="form-control" id="dataNascimento" placeholder="Informe a Data de nascimento" />
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">
+                                <label for="rg">RG:</label>
+                                <input type="rg" class="form-control" id="rg" placeholder="Informe o RG" />
+                            </div>
 
+                            <div class="col-xs-6 col-md-4">
+                                <label for="orgao">Orgão Emissor:</label>
+                                <input type="orgao" class="form-control" id="orgao" placeholder="Informe Orgão Emissor" />
+                            </div>
 
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-8">
-                                        <label for="cpf">CPF</label>
-                                        <input type="cpf" class="form-control" id="cpf" placeholder="Informe o CPF" />
-                                    </div>
-                                    <div class="col-xs-6 col-md-4">
-                                        <label for="dataNascimento">Membro do Comitê</label>
-                                        <input type="date" class="form-control" id="comite" placeholder="Listagem do comitê" />
+                            <div class="col-xs-6 col-md-4">
+                                <label for="emissao">Data de Emissão</label>
+                                <input type="emissao" class="form-control" id="emissao" placeholder="xx/xx/xxxx" />
+                            </div>
+                        </div>
 
-                                    </div>
-                                </div>
+                        <br>
 
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <label for="cpf">CPF</label>
+                                <input type="cpf" class="form-control" id="cpf" placeholder="Informe o CPF" />
+                            </div>
+
+                            <div class="col-xs-6 col-md-4">
+                                <label for="dataNascimento">Data de Nascimento</label>
+                                <input type="date" class="form-control" id="dataNascimento" placeholder="Informe a Data de nascimento" />
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <label for="nome" class="control-label">Função no Comitê:</label>
+                                <select class="form-control">
+                                    <option>Presidente</option>
+                                    <option>Avaliador</option>
+                                    <option>Vice Presidente</option>
+                                    <option>Coordenador</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>
+
+                        <button type="submit" class="btn btn-primary">Cancelar</button>
                         <div class="help-block with-errors"></div>
 
 
+                        <br>
+                        <div class="row">
+
+
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-md-3" role="complementary">
+
+                     <h4><strong>Usuário</strong></h4>
+                     <h5>Você está logado como...</h5>
+                     <h5><strong>Administrador</strong></h5>
+
+                    <br>
+
+                     <a href=perfil.html><h5> >> Meu Perfil</h5></a>
+                     <a href=sair.html><h5> >>Sair</h5></a>
+
+                    <br>
+
+                     <h4><strong> Idioma:</strong></h4>
+                    <select class="form-control">
+                        <option>Português (Brasil)</option>
+                        <option>Inglês</option>
+                        <option>Espanhol</option>
+                        <option>Francês</option>
+                        <option>Alemão</option>
+                    </select>
+
+                    <br>
+
+                     <h4><strong>Tamanho da Fonte</strong></h4> 
+                </div>
+
             </div>
     </body>
 
