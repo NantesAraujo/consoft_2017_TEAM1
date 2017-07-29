@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.facom.sgcteam01.model.Conferencia;
-import com.facom.sgcteam01.repository.ConferenciaRepository;
+import com.facom.sgcteam01.repository.IConferenciaRepository;
 
 @Service
 public class ConferenciaService {
 
 	@Autowired
-	private ConferenciaRepository iConferenciaRepository;
+	private IConferenciaRepository iConferenciaRepository;
 
 	public List<Conferencia> buscarTodos() {
 		return iConferenciaRepository.findAll();

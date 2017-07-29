@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>insert title here</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Lista de Convidados</h1>
+    
+
+	<div class="container">
+		<div id="listaDeConvidados">
+		    <table class="table table-hover">
+		        <thead>
+		        <tr>
+		            <th>id</th>
+		            <th>Nome</th>
+		            <th>sub titulo</th>
+		            <th>pagina web</th>
+		            <th>cidade</th>
+		            <th>email contato</th>
+		            <th>data inicio</th>
+		            <th>data fim</th>
+		        </tr>
+		        </thead>
+		        <tr th:each="conferencia : ${conferencias}">
+		            <td> <span th:text="${conferencia.id}"></span> </td>
+		            <td> <span th:text="${conferencia.nome}"></span> </td>
+		            <td> <span th:text="${conferencia.subTitulo}"></span> </td>
+		            <td> <span th:text="${conferencia.paginaWeb}"></span> </td>
+		            <td> <span th:text="${conferencia.cidade}"></span> </td>
+		            <td> <span th:text="${conferencia.emailContato}"></span> </td>
+		            <td> <span th:text="${conferencia.dataInicio}"></span> </td>
+		            <td> <span th:text="${conferencia.dataFim}"></span> </td>
+		        </tr>
+		    </table>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
