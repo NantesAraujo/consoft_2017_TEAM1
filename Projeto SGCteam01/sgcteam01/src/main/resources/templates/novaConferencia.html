@@ -128,18 +128,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Fases <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/fase/new">Cadastrar Fases</a>
-                                </li>
-                                <li>
-                                    <a href="/fase/list">Listar Fases</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -149,9 +137,134 @@
 
         <div id="page-wrapper">
         
+        	<div class="row">
+        		<div class="panel-heading">
+        		
+        		</div>
+	        	<div class="panel panel-default">
+	        		<div class="panel panel-heading">
+	        			Cadastro de Conferência
+	        		</div>
+	        		
+	        		<form class="form-horizontal" th:action="@{/conferencia/save}" method="POST">
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                          
+                          		<div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" hidden="true" >id:</label>
+							    	<div class="col-sm-10 col-lg-8" >
+							    		<input class="form-control" placeholder="Titulo da conferência" name="id" type="hidden"/>
+							    	</div>
+							    	<span class="col-xs-2 col-md-4" /> 
+							    </div>
+	                            
+					            <div class="form-group">
+							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Idioma:</label>
+							    	<div class="col-sm-3 col-lg-3" >
+							    		<select class="form-control" name="idioma">
+							    			<option value="portuguesBrasil">Português (Brasil)</option>
+							    			<option value="portuguesPortugal">Português (Portugal)</option>
+							    			<option value="ingles">Inglês</option>
+							    			<option value="espanhol">Espanhol</option>
+							    		</select>
+							    	</div>
+							    </div>
+					                		
+					            <div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">Título da Conferência:*</label>
+							    	<div class="col-sm-10 col-lg-8" >
+							    		<input class="form-control" placeholder="Titulo da conferência" name="titulo" />
+							    	</div>
+							    	<span class="col-xs-2 col-md-4" /> 
+							    </div>
+							                
+							    <div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
+							    		tópicos gerais:*
+							    	</label>
+							    	<div class="col-sm-10 col-lg-8" >
+							    		<input class="form-control" placeholder="tópicos gerais" name="topicoGerais"/>
+							    	</div>
+							    	<span class="col-xs-6 col-md-4" /> 
+							    </div>     
+							                
+							    <div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
+							    		Página Web:
+							    	</label>
+							    	<div class="col-sm-10 col-lg-8" >
+							    		<input class="form-control" placeholder="endereço web" name="paginaweb" />
+							    	</div>
+							    	<span class="col-xs-6 col-md-4" /> 
+							    </div>     
+							                
+							    <div class="form-group">
+							            <label for="tamanho" class="col-lg-3 pull-lwft control-label">
+							            	Descrição:
+							            </label>
+							            <div class="col-sm-10 col-lg-8">
+							        	<textarea rows="3" class="form-control" name="descricao" />
+							    	</div>
+							    </div>
+					
+					            <div class="form-group">
+					            	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
+					                	Nome Organizador:
+					                </label>
+							        <div class="col-sm-10 col-lg-8" >
+							        	<input class="form-control" placeholder="nome organizador" name="nomeOrganizador"/>
+							        </div>
+						            <span class="col-xs-6 col-md-4" /> 
+						        </div>
+						                	
+							    <div class="form-group">
+							        <label for="tamanho" class="col-lg-3 pull-lwft control-label">
+							        	Email contato:
+							    	</label>
+							        <div class="col-sm-10 col-lg-8" >
+							        	<input class="form-control" placeholder="email de contato" name="emailContato" />
+							        </div>
+							    	<span class="col-xs-6 col-md-4"></span> 
+							    </div>
+							
+							    <div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
+							            	Cidade realização:
+							        </label>
+							        <div class="col-sm-10 col-lg-8" >
+							            	<input class="form-control" placeholder="cidade" name="cidade" />
+							        </div>
+							    	<div class="help-block with-errors" />
+							    </div>
+							                
+							    <div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">Estado:</label>
+						        	<div class="col-sm-4 col-lg-3" >
+						            	<input class="form-control" placeholder="estado" name="estado" />
+						    		</div>
+								</div>
+							                
+							    <div class="form-group">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" />
+						        	<div class="col-sm-4 col-lg-3" >
+							    	<ul class="nav navbar-top-links navbar-right">
+		                        		<li>
+		                        			<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+		                        		</li>
+		                        		<li>
+		                        			<a th:href="@{/conferencia/list}" class="btn btn-sm-10 ">Cancelar</a>
+		                        		</li>
+					        		</ul>
+						    		</div>
+								</div>
+							</div>
+							
+				    	</form>
+                    </div>
+            </div><!-- fim row -->
+        	
         </div>
-        <!-- /#page-wrapper -->
-
+	     
     </div>
     <!-- /#wrapper -->
 
