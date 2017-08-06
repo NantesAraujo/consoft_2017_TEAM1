@@ -10,14 +10,4 @@ public class RotasDefault {
 	public String index() {
 		return "index";
 	}
-
-	@RequestMapping("/cadastrarConferencia")
-	public String novaConferencia() {
-		return "novaConferencia";
-	}
-
-	@RequestMapping("/cadastrarFase")
-	public String novaFase() {
-		return "novaFase";
-	}
 }

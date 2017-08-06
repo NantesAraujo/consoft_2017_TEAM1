@@ -18,6 +18,11 @@ public class ConferenciaController {
 	@Autowired
 	private IConferenciaRepository iConferenciaRepository;
 
+	@RequestMapping("/cadastrarConferencia")
+	public String novaConferencia() {
+		return "novaConferencia";
+	}
+
 	@PostMapping("/conferencia/save")
 	public String save(Conferencia conferencia, BindingResult result) {
 

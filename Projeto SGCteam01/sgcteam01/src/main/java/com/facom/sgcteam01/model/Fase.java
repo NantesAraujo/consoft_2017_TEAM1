@@ -25,6 +25,19 @@ public class Fase implements Serializable {
 	@Column
 	private Date dataFim;
 
+	// @ManyToOne
+	// @JoinColumn(name = "conferencia_id", referencedColumnName = "id")
+	// private Conferencia conferencia;
+
+	public Fase() {
+	}
+
+	public Fase(String descricao, Date dataInicioFase, Date dataFimFase) {
+		this.descricao = descricao;
+		this.dataInicio = dataInicioFase;
+		this.dataFim = dataFimFase;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -56,4 +69,12 @@ public class Fase implements Serializable {
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
+
+	// public Conferencia getConferencia() {
+	// return conferencia;
+	// }
+	//
+	// public void setConferencia(Conferencia conferencia) {
+	// this.conferencia = conferencia;
+	// }
 }

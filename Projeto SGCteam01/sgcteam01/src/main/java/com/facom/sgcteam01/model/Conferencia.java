@@ -45,6 +45,9 @@ public class Conferencia implements Serializable {
 	@Column(name = "emailContato")
 	private String emailContato;
 
+	// @OneToMany(mappedBy = "conferencia")
+	// private List<Fase> fases;
+
 	public Conferencia() {
 	}
 
@@ -140,4 +143,12 @@ public class Conferencia implements Serializable {
 	public void setEmailContato(String emailContato) {
 		this.emailContato = emailContato;
 	}
+
+	// public List<Fase> getFases() {
+	// return fases;
+	// }
+	//
+	// public void setFases(List<Fase> fases) {
+	// this.fases = fases;
+	// }
 }

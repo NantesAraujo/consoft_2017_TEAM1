@@ -108,10 +108,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Conferências <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Cadastrar Conferência</a>
+                                    <a href="/conferencia/new">Cadastrar Conferência</a>
                                 </li>
                                 <li>
-                                    <a href="#">Listar Conferência</a>
+                                    <a href="/conferencia/list">Listar Conferência</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -120,10 +120,22 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Eventos <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Cadastrar Evento</a>
+                                    <a href="/evento/new">Cadastrar Evento</a>
                                 </li>
                                 <li>
-                                    <a href="#">Listar Evento</a>
+                                    <a href="/evento/list">Listar Eventos</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Membros <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/menbro/new">Cadastrar Membros</a>
+                                </li>
+                                <li>
+                                    <a href="/menbro/list">Listar Membros</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -132,10 +144,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Fases <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Cadastrar Fase</a>
+                                    <a href="/cadastrarFase">Cadastrar Fases</a>
                                 </li>
                                 <li>
-                                    <a href="#">Listar Fases</a>
+                                    <a href="/fase/list">Listar Fases</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -163,7 +175,7 @@
 				 
 				    <div class="col-md-6">
 				        <div class="input-group h2">
-				            <input name="data[search]" class="form-control" id="txt_consulta" type="text" placeholder="Pesquisar Itens" />
+				            <input name="data[search]" class="form-control" id="txt_consultaFase" type="text" placeholder="Pesquisar Itens" />
 				            <span class="input-group-btn">
 				                <button class="btn btn-primary" type="submit">
 				                    <span class="glyphicon glyphicon-search"></span>
@@ -179,7 +191,7 @@
 				
 				<div id="list" class="row">
 				    <div class="table-responsive col-md-12">
-				        <table id="tabela" class="table table-striped" cellspacing="0" cellpadding="0">
+				        <table id="tabelaFase" class="table table-striped" cellspacing="0" cellpadding="0">
 				            <thead>
 				                <tr>
 				                    <th>#</th>
@@ -206,7 +218,7 @@
 				         </table>
 				         
 				         <script>
-				            $('input#txt_consulta').quicksearch('table#tabela tbody tr');
+				            $('input#txt_consultaFase').quicksearch('table#tabelaFase tbody tr');
 				        </script>
 				     </div>
 				     <div id="bottom" class="row">

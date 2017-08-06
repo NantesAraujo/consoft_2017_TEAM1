@@ -9,45 +9,50 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.facom.sgcteam01.model.Comite;
-import com.facom.sgcteam01.repository.IComiteRepository;
+import com.facom.sgcteam01.model.MembroComite;
+import com.facom.sgcteam01.repository.IMembroComiteRepositor;
 
 @Controller
-public class ComiteController {
+public class MembroComiteController {
 
 	@Autowired
-	private IComiteRepository iComiteRepository;
+	private IMembroComiteRepositor iMembroComiteRepository;
 
-	@PostMapping("/comite/save")
-	public String save(Comite comite, BindingResult result) {
-
-		iComiteRepository.save(comite);
-
-		return "redirect:/comite/list";
+	@RequestMapping("/cadastrarMembroComite")
+	public String novaConferencia() {
+		return "novoMembro";
 	}
 
-	@GetMapping("/comite/edit/{id}")
+	@PostMapping("/membroComite/save")
+	public String save(MembroComite membroComite, BindingResult result) {
+
+		iMembroComiteRepository.save(membroComite);
+
+		return "redirect:/membroComite/list";
+	}
+
+	@GetMapping("/membroComite/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
 
 		ModelAndView model = new ModelAndView();
-		model.addObject("conferencia", iComiteRepository.findOne(id));
+		model.addObject("membroComite", iMembroComiteRepository.findOne(id));
 
 		return model;
 	}
 
-	@GetMapping("/comite/delete/{id}")
+	@GetMapping("/membroComite/delete/{id}")
 	public String delete(@PathVariable("id") Long id) {
 
-		iComiteRepository.delete(id);
+		iMembroComiteRepository.delete(id);
 
-		return "redirect:/comite/list";
+		return "redirect:/membroComite/list";
 	}
 
-	@RequestMapping("/comite/list")
+	@RequestMapping("/membroComite/list")
 	public ModelAndView findAll() {
 
-		ModelAndView mv = new ModelAndView("/comite/list");
-		mv.addObject("conferencias", iComiteRepository.findAll());
+		ModelAndView mv = new ModelAndView("/listaMembro");
+		mv.addObject("membros", iMembroComiteRepository.findAll());
 
 		return mv;
 	}
