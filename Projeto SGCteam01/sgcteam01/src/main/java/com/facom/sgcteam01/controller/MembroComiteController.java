@@ -1,5 +1,7 @@
 package com.facom.sgcteam01.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.facom.sgcteam01.model.Comite;
 import com.facom.sgcteam01.model.MembroComite;
+import com.facom.sgcteam01.repository.IComiteRepository;
 import com.facom.sgcteam01.repository.IMembroComiteRepositor;
 
 @Controller
@@ -18,9 +22,24 @@ public class MembroComiteController {
 	@Autowired
 	private IMembroComiteRepositor iMembroComiteRepository;
 
-	@RequestMapping("/cadastrarMembroComite")
-	public String novaConferencia() {
-		return "novoMembro";
+	@Autowired
+	private IComiteRepository iComiteRepository;
+
+	MembroComite membroComiteEdit = new MembroComite();
+
+	@RequestMapping("/membroComite/new")
+	public ModelAndView novoMembro() {
+		MembroComite membroComite = new MembroComite();
+
+		List<Comite> comites = iComiteRepository.findAll();
+
+		if (membroComiteEdit != null && membroComiteEdit.getId() != null)
+			membroComite = membroComiteEdit;
+
+		ModelAndView model = new ModelAndView("novoMembro");
+		model.addObject("membroComite", membroComite);
+		model.addObject("comites", comites);
+		return model;
 	}
 
 	@PostMapping("/membroComite/save")
@@ -28,16 +47,18 @@ public class MembroComiteController {
 
 		iMembroComiteRepository.save(membroComite);
 
+		if (membroComiteEdit != null && membroComiteEdit.getId() != null)
+			membroComiteEdit = null;
+
 		return "redirect:/membroComite/list";
 	}
 
 	@GetMapping("/membroComite/edit/{id}")
-	public ModelAndView edit(@PathVariable("id") Long id) {
+	public String edit(@PathVariable("id") Long id) {
 
-		ModelAndView model = new ModelAndView();
-		model.addObject("membroComite", iMembroComiteRepository.findOne(id));
+		membroComiteEdit = iMembroComiteRepository.findOne(id);
 
-		return model;
+		return "redirect:/membroComite/new";
 	}
 
 	@GetMapping("/membroComite/delete/{id}")
@@ -55,6 +76,14 @@ public class MembroComiteController {
 		mv.addObject("membros", iMembroComiteRepository.findAll());
 
 		return mv;
+	}
+
+	@GetMapping("/membroComite/cancel")
+	public String cancelar() {
+		if (membroComiteEdit != null && membroComiteEdit.getId() != null)
+			membroComiteEdit = null;
+
+		return "redirect:/membroComite/list";
 	}
 
 }

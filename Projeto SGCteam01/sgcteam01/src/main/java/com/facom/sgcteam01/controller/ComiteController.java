@@ -18,21 +18,37 @@ public class ComiteController {
 	@Autowired
 	private IComiteRepository iComiteRepository;
 
+	Comite comiteEdit = new Comite();
+
+	@RequestMapping("/comite/new")
+	public ModelAndView novoComite() {
+		Comite comite = new Comite();
+
+		if (comiteEdit != null && comiteEdit.getId() != null)
+			comite = comiteEdit;
+
+		ModelAndView model = new ModelAndView("novoComite");
+		model.addObject("comite", comite);
+		return model;
+	}
+
 	@PostMapping("/comite/save")
 	public String save(Comite comite, BindingResult result) {
 
 		iComiteRepository.save(comite);
 
+		if (comiteEdit != null && comiteEdit.getId() != null)
+			comiteEdit = null;
+
 		return "redirect:/comite/list";
 	}
 
 	@GetMapping("/comite/edit/{id}")
-	public ModelAndView edit(@PathVariable("id") Long id) {
+	public String edit(@PathVariable("id") Long id) {
 
-		ModelAndView model = new ModelAndView();
-		model.addObject("conferencia", iComiteRepository.findOne(id));
+		comiteEdit = iComiteRepository.findOne(id);
 
-		return model;
+		return "redirect:/membroComite/new";
 	}
 
 	@GetMapping("/comite/delete/{id}")
@@ -46,10 +62,18 @@ public class ComiteController {
 	@RequestMapping("/comite/list")
 	public ModelAndView findAll() {
 
-		ModelAndView mv = new ModelAndView("/comite/list");
-		mv.addObject("conferencias", iComiteRepository.findAll());
+		ModelAndView mv = new ModelAndView("/listaComite");
+		mv.addObject("comites", iComiteRepository.findAll());
 
 		return mv;
+	}
+
+	@GetMapping("/comite/cancel")
+	public String cancelar() {
+		if (comiteEdit != null && comiteEdit.getId() != null)
+			comiteEdit = null;
+
+		return "redirect:/comite/list";
 	}
 
 }

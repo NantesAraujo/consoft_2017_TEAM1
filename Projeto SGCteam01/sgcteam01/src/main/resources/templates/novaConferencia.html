@@ -2,138 +2,14 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
-    <title>Sistema Gerenciamente ConferÃªncia</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet" />
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet" />
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <div th:include="Head"></div>
 </head>
 
 <body>
 
     <div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Sistema Gerenciador de ConferÃªncia v1.0.0</a>
-            </div>
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search..." />
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href="/"><i class="fa fa-dashboard fa-fw"></i> Inicio </a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> ConferÃªncias <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/conferencia/new">Cadastrar ConferÃªncia</a>
-                                </li>
-                                <li>
-                                    <a href="/conferencia/list">Listar ConferÃªncia</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Eventos <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/evento/new">Cadastrar Evento</a>
-                                </li>
-                                <li>
-                                    <a href="/evento/list">Listar Eventos</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Membros <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/menbro/new">Cadastrar Membros</a>
-                                </li>
-                                <li>
-                                    <a href="/menbro/list">Listar Membros</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+        <div th:include="Menu"></div>
 
         <div id="page-wrapper">
         
@@ -143,7 +19,7 @@
         		</div>
 	        	<div class="panel panel-default">
 	        		<div class="panel panel-heading">
-	        			Cadastro de ConferÃªncia
+	        			Cadastro de Conferência
 	        		</div>
 	        		
 	        		<form class="form-horizontal" th:action="@{/conferencia/save}" method="POST">
@@ -153,7 +29,7 @@
                           		<div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" hidden="true" >id:</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="Titulo da conferÃªncia" name="id" type="hidden"/>
+							    		<input class="form-control" placeholder="Titulo da conferência" name="id" type="hidden"/>
 							    	</div>
 							    	<span class="col-xs-2 col-md-4" /> 
 							    </div>
@@ -162,45 +38,45 @@
 							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Idioma:</label>
 							    	<div class="col-sm-3 col-lg-3" >
 							    		<select class="form-control" name="idioma">
-							    			<option value="portuguesBrasil">PortuguÃªs (Brasil)</option>
-							    			<option value="portuguesPortugal">PortuguÃªs (Portugal)</option>
-							    			<option value="ingles">InglÃªs</option>
+							    			<option value="portuguesBrasil">Português (Brasil)</option>
+							    			<option value="portuguesPortugal">Português (Portugal)</option>
+							    			<option value="ingles">Inglês</option>
 							    			<option value="espanhol">Espanhol</option>
 							    		</select>
 							    	</div>
 							    </div>
 					                		
 					            <div class="form-group">
-							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">TÃ­tulo da ConferÃªncia:*</label>
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">Título da Conferência:*</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="Titulo da conferÃªncia" name="titulo" />
+							    		<input class="form-control" placeholder="Titulo da conferência" name="titulo" />
 							    	</div>
 							    	<span class="col-xs-2 col-md-4" /> 
 							    </div>
 							                
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							    		tÃ³picos gerais:*
+							    		tópicos gerais:*
 							    	</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="tÃ³picos gerais" name="topicoGerais"/>
+							    		<input class="form-control" placeholder="tópicos gerais" name="topicoGerais"/>
 							    	</div>
 							    	<span class="col-xs-6 col-md-4" /> 
 							    </div>     
 							                
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							    		PÃ¡gina Web:
+							    		Página Web:
 							    	</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="endereÃ§o web" name="paginaweb" />
+							    		<input class="form-control" placeholder="endereço web" name="paginaweb" />
 							    	</div>
 							    	<span class="col-xs-6 col-md-4" /> 
 							    </div>     
 							                
 							    <div class="form-group">
 							            <label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							            	DescriÃ§Ã£o:
+							            	Descrição:
 							            </label>
 							            <div class="col-sm-10 col-lg-8">
 							        	<textarea rows="3" class="form-control" name="descricao" />
@@ -229,7 +105,7 @@
 							
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							            	Cidade realizaÃ§Ã£o:
+							            	Cidade realização:
 							        </label>
 							        <div class="col-sm-10 col-lg-8" >
 							            	<input class="form-control" placeholder="cidade" name="cidade" />
@@ -266,24 +142,8 @@
         </div>
 	     
     </div>
-    <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <div th:include="scriptHtml"></div>
 </body>
 
 </html>

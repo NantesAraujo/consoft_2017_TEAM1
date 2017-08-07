@@ -38,4 +38,63 @@ public class MembroComite implements Serializable {
 	@JoinColumn(name = "comite", referencedColumnName = "id")
 	private Comite comite;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAreaInteresse() {
+		return areaInteresse;
+	}
+
+	public void setAreaInteresse(String areaInteresse) {
+		this.areaInteresse = areaInteresse;
+	}
+
+	public String getInstituicao() {
+		return instituicao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
+	}
+
+	public String getFuncoes() {
+		return Funcoes;
+	}
+
+	public void setFuncoes(String funcoes) {
+		Funcoes = funcoes;
+	}
+
+	public Comite getComite() {
+		return comite;
+	}
+
+	public void setComite(Comite comite) {
+		this.comite = comite;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }

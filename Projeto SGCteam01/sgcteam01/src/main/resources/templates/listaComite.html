@@ -9,7 +9,7 @@
 
     <div id="wrapper">
 
-		<div th:include="Menu"></div>
+        <div th:include="Menu"></div>
 
         <div id="page-wrapper">
         	
@@ -27,7 +27,7 @@
 				 
 				    <div class="col-md-6">
 				        <div class="input-group h2">
-				            <input name="data[search]" class="form-control" id="txt_consulta" type="text" placeholder="Pesquisar Itens" />
+				            <input name="data[search]" class="form-control" id="txt_consultaFase" type="text" placeholder="Pesquisar Itens" />
 				            <span class="input-group-btn">
 				                <button class="btn btn-primary" type="submit">
 				                    <span class="glyphicon glyphicon-search"></span>
@@ -37,36 +37,28 @@
 				    </div>
 				 
 				    <div class="col-md-3">
-				        <a href="/membroComite/new" class="btn btn-primary pull-right h2">Novo Membro</a>
+				        <a href="/comite/new" class="btn btn-primary pull-right h2">Novo Comite</a>
 				    </div>
 				</div>
 				
 				<div id="list" class="row">
 				    <div class="table-responsive col-md-12">
-				        <table id="tabela" class="table table-striped" cellspacing="0" cellpadding="0">
+				        <table id="tabelaFase" class="table table-striped" cellspacing="0" cellpadding="0">
 				            <thead>
 				                <tr>
 				                    <th>#</th>
-	                                <th>Nome Membro</th>
-	                                <th>Email</th>
-	                                <th>Area Interesse</th>
-	                                <th>Instituicao</th>
-	                                <th>Funcoes</th>
+	                                <th>Descricao</th>
 				                    <th class="actions">Acoes</th>
 				                 </tr>
 				            </thead>
 				            <tbody>
-				                <tr th:each="membro : ${membros}" class="odd gradeX">
-				                    <td> <span th:text="${membro.id}"></span> </td>
-				                    <td> <span th:text="${membro.nome}"></span> </td>
-				                    <td> <span th:text="${membro.email}"></span> </td>
-				                    <td> <span th:text="${membro.areaInteresse}"></span> </td>
-				                    <td> <span th:text="${membro.instituicao}"></span> </td>
-				                    <td> <span th:text="${membro.funcoes}"></span> </td>
+				                <tr th:each="comite : ${comites}" class="odd gradeX">
+				                    <td> <span th:text="${comite.id}"></span> </td>
+				                    <td> <span th:text="${comite.descricao}"></span> </td>
 				                    <td class="actions">
-				                        <a class="btn btn-success btn-xs" th:href="@{/membroComite/view/{id}(id=${membro.id})}">Visualizar</a>
-				                        <a class="btn btn-warning btn-xs" th:href="@{/membroComite/edit/{id}(id=${membro.id})}" >Editar</a>
-			                   		<a class="delete btn btn-sm btn-danger" th:href="@{/membroComite/delete/{id}(id=${membro.id})}">Excluir</a>
+				                        <a class="btn btn-success btn-xs" th:href="@{/comite/edit/{id}(id=${comite.id})}">Visualizar</a>
+				                        <a class="btn btn-warning btn-xs" th:href="@{/comite/edit/{id}(id=${comite.id})}" >Editar</a>
+				                   		<a class="delete btn btn-sm btn-danger" th:href="@{/comite/delete/{id}(id=${comite.id})}">Excluir</a>
 				                    </td>
 				                </tr>
 				 
@@ -74,7 +66,7 @@
 				         </table>
 				         
 				         <script>
-				            $('input#txt_consulta').quicksearch('table#tabela tbody tr');
+				            $('input#txt_consultaFase').quicksearch('table#tabelaFase tbody tr');
 				        </script>
 				     </div>
 				     <div id="bottom" class="row">
@@ -84,7 +76,7 @@
 					        <ul class="pagination">
 					            <li class="disabled"><a>&lt; Anterior</a></li>
 					            <li class="disabled"><a>1</a></li>
-					            <li class="next"><a href="#" rel="next">Proximo &gt;</a></li>
+					            <li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
 					        </ul><!-- /.pagination -->
 					    </div>
 					</div> <!-- /#bottom -->

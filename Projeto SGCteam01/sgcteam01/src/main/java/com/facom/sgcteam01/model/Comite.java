@@ -25,27 +25,27 @@ public class Comite implements Serializable {
 	@OneToMany(mappedBy = "comite")
 	private List<MembroComite> membros;
 
-	private Long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	private void setId(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	private String getDescricao() {
+	public String getDescricao() {
 		return descricao;
 	}
 
-	private void setDescricao(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 
-	private List<MembroComite> getMembros() {
+	public List<MembroComite> getMembros() {
 		return membros;
 	}
 
-	private void setMembros(List<MembroComite> membros) {
+	public void setMembros(List<MembroComite> membros) {
 		this.membros = membros;
 	}
 }
