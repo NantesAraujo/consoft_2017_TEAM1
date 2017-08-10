@@ -79,12 +79,12 @@
 							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Comite:</label>
 							    	<div class="col-sm-3 col-lg-3" >
 							    		<select class="form-control" name="funcoes" th:field="*{comite}">
-							    			<option value="membro" th:each="comite : ${comites}" th:value="${comite}" th:text="${comite.descricao}"></option>
+							    			<option value="membro" th:each="comite : ${comites}" th:value="${comite.id}" th:text="${comite.descricao}"></option>
 							    		</select>
 							    	</div>
 							    </div>
 	                            
-							    <div class="form-group">
+							    <div class="form-group" th:if="${edicao}">
 							    	<label class="col-lg-3 pull-lwft control-label" />
 						        	<div class="col-sm-4 col-lg-3" >
 							    	<ul class="nav navbar-top-links navbar-right">
@@ -93,6 +93,17 @@
 		                        		</li>
 		                        		<li>
 		                        			<a th:href="@{/membroComite/cancel}" class="btn btn-sm-10 ">Cancelar</a>
+		                        		</li>
+					        		</ul>
+						    		</div>
+								</div>
+								
+							    <div class="form-group" th:if="${not edicao}">
+							    	<label class="col-lg-3 pull-lwft control-label" />
+						        	<div class="col-sm-4 col-lg-3" >
+							    	<ul class="nav navbar-top-links navbar-right">
+		                        		<li>
+		                        			<a th:href="@{/membroComite/cancel}" class="btn btn-sm-10 ">Voltar</a>
 		                        		</li>
 					        		</ul>
 						    		</div>
