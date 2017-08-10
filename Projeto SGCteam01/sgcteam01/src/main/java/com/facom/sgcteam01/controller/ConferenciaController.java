@@ -11,16 +11,33 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.facom.sgcteam01.model.Conferencia;
 import com.facom.sgcteam01.repository.IConferenciaRepository;
+import com.facom.sgcteam01.repository.IMembroComiteRepositor;
 
 @Controller
 public class ConferenciaController {
 
 	@Autowired
+	private IMembroComiteRepositor iMembroComiteRepository;
+
+	@Autowired
 	private IConferenciaRepository iConferenciaRepository;
 
-	@RequestMapping("/cadastrarConferencia")
-	public String novaConferencia() {
-		return "novaConferencia";
+	Conferencia conferenciaEdit = new Conferencia();
+
+	private boolean editable = true;
+
+	@RequestMapping("/conferencia/new")
+	public ModelAndView novaConferencia() {
+		Conferencia conferencia = new Conferencia();
+
+		if (conferenciaEdit != null && conferenciaEdit.getId() != null)
+			conferencia = conferenciaEdit;
+
+		ModelAndView model = new ModelAndView("novaConferencia");
+		model.addObject("conferencia", conferencia);
+		model.addObject("edicao", editable);
+
+		return model;
 	}
 
 	@PostMapping("/conferencia/save")
@@ -28,13 +45,27 @@ public class ConferenciaController {
 
 		iConferenciaRepository.save(conferencia);
 
+		if (conferenciaEdit != null && conferenciaEdit.getId() != null)
+			conferenciaEdit = null;
+
 		return "redirect:/conferencia/list";
 	}
 
-	@RequestMapping("/conferencia/edit/{id}")
-	public ModelAndView edit(@PathVariable Long id) {
-		ModelAndView mv = new ModelAndView("editarConferencia");
-		return mv;
+	@GetMapping("/conferencia/edit/{id}")
+	public String edit(@PathVariable("id") Long id) {
+
+		conferenciaEdit = iConferenciaRepository.findOne(id);
+
+		return "redirect:/conferencia/new";
+	}
+
+	@GetMapping("/conferencia/view/{id}")
+	public String view(@PathVariable("id") Long id) {
+
+		conferenciaEdit = iConferenciaRepository.findOne(id);
+		editable = false;
+
+		return "redirect:/conferencia/new";
 	}
 
 	@GetMapping("/conferencia/delete/{id}")
@@ -52,5 +83,14 @@ public class ConferenciaController {
 		mv.addObject("conferencias", iConferenciaRepository.findAll());
 
 		return mv;
+	}
+
+	@GetMapping("/conferencia/cancel")
+	public String cancelar() {
+		editable = true;
+		if (conferenciaEdit != null && conferenciaEdit.getId() != null)
+			conferenciaEdit = null;
+
+		return "redirect:/conferencia/list";
 	}
 }

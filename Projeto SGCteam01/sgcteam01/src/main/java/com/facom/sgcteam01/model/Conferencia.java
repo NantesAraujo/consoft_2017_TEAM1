@@ -45,8 +45,14 @@ public class Conferencia implements Serializable {
 	@Column(name = "emailContato")
 	private String emailContato;
 
-	// @OneToMany(mappedBy = "conferencia")
-	// private List<Fase> fases;
+	@Column(name = "tiposSubmissoes")
+	private String tiposSubmissoes;
+
+	@Column(name = "participante")
+	private String participante;
+
+	@Column(name = "tipoEventos")
+	private String tipoEventos;
 
 	public Conferencia() {
 	}
@@ -144,11 +150,27 @@ public class Conferencia implements Serializable {
 		this.emailContato = emailContato;
 	}
 
-	// public List<Fase> getFases() {
-	// return fases;
-	// }
-	//
-	// public void setFases(List<Fase> fases) {
-	// this.fases = fases;
-	// }
+	public String getTiposSubmissoes() {
+		return tiposSubmissoes;
+	}
+
+	public void setTiposSubmissoes(String tiposSubmissoes) {
+		this.tiposSubmissoes = tiposSubmissoes;
+	}
+
+	public String getParticipante() {
+		return participante;
+	}
+
+	public void setParticipante(String participante) {
+		this.participante = participante;
+	}
+
+	public String getTipoEventos() {
+		return tipoEventos;
+	}
+
+	public void setTipoEventos(String tipoEventos) {
+		this.tipoEventos = tipoEventos;
+	}
 }

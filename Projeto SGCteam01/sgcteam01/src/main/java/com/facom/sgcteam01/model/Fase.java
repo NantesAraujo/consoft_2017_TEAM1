@@ -1,7 +1,6 @@
 package com.facom.sgcteam01.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,19 +19,15 @@ public class Fase implements Serializable {
 	private String descricao;
 
 	@Column
-	private Date dataInicio;
+	private String dataInicio;
 
 	@Column
-	private Date dataFim;
-
-	// @ManyToOne
-	// @JoinColumn(name = "conferencia_id", referencedColumnName = "id")
-	// private Conferencia conferencia;
+	private String dataFim;
 
 	public Fase() {
 	}
 
-	public Fase(String descricao, Date dataInicioFase, Date dataFimFase) {
+	public Fase(String descricao, String dataInicioFase, String dataFimFase) {
 		this.descricao = descricao;
 		this.dataInicio = dataInicioFase;
 		this.dataFim = dataFimFase;
@@ -54,27 +49,19 @@ public class Fase implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public Date getDataInicio() {
+	public String getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(Date dataInicio) {
+	public void setDataInicio(String dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-	public Date getDataFim() {
+	public String getDataFim() {
 		return dataFim;
 	}
 
-	public void setDataFim(Date dataFim) {
+	public void setDataFim(String dataFim) {
 		this.dataFim = dataFim;
 	}
-
-	// public Conferencia getConferencia() {
-	// return conferencia;
-	// }
-	//
-	// public void setConferencia(Conferencia conferencia) {
-	// this.conferencia = conferencia;
-	// }
 }

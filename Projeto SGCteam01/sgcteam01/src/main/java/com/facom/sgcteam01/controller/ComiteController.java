@@ -48,7 +48,7 @@ public class ComiteController {
 
 		comiteEdit = iComiteRepository.findOne(id);
 
-		return "redirect:/membroComite/new";
+		return "redirect:/comite/new";
 	}
 
 	@GetMapping("/comite/delete/{id}")

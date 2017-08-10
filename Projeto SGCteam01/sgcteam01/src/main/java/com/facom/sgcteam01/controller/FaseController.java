@@ -26,33 +26,41 @@ public class FaseController {
 	@Autowired
 	private IConferenciaRepository iConferenciaRepository;
 
-	@RequestMapping("/cadastrarFase")
+	private boolean editable = true;
+
+	private Fase faseEdit;
+
+	@RequestMapping("/fase/new")
 	public ModelAndView novaFase() {
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		Fase fase = new Fase();
+
+		if (faseEdit != null && faseEdit.getId() != null) {
+			fase = new Fase(faseEdit.getDescricao(), faseEdit.getDataInicio(), faseEdit.getDataFim());
+		}
 
 		ModelAndView model = new ModelAndView("novaFase");
-		model.addObject("conferencias", iConferenciaRepository.findAll());
+		model.addObject("fase", fase);
+		model.addObject("edicao", editable);
 
-		return new ModelAndView("novaFase");
+		return model;
 	}
 
 	@PostMapping("/fase/save")
 	public String save(@RequestParam(name = "descricao") String descricao,
 			@RequestParam(name = "dataInicio") String dataInicio, @RequestParam(name = "dataFim") String dataFim) {
+
+		Fase fase = new Fase(descricao, dataInicio, dataFim);
+
+		iFaseRepository.save(fase);
+
+		return "redirect:/fase/list";
+	}
+
+	private Date formatarData(String data) {
 		SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");
-		Date dataInicioFase;
-		Date dataFimFase;
-		Fase fase;
-
 		try {
-
-			dataInicioFase = formatDate.parse(dataInicio);
-			dataFimFase = formatDate.parse(dataFim);
-
-			fase = new Fase(descricao, dataInicioFase, dataFimFase);
-
-			iFaseRepository.save(fase);
-
-			return "redirect:/fase/list";
+			return formatDate.parse(data);
 		} catch (ParseException e) {
 			e.printStackTrace();
 			return null;
@@ -60,9 +68,20 @@ public class FaseController {
 	}
 
 	@RequestMapping("/fase/edit/{id}")
-	public ModelAndView edit(@PathVariable Long id) {
-		ModelAndView mv = new ModelAndView("editarFase");
-		return mv;
+	public String edit(@PathVariable Long id) {
+
+		faseEdit = iFaseRepository.findOne(id);
+
+		return "redirect:/fase/new";
+	}
+
+	@GetMapping("/fase/view/{id}")
+	public String view(@PathVariable("id") Long id) {
+
+		faseEdit = iFaseRepository.findOne(id);
+		editable = false;
+
+		return "redirect:/fase/new";
 	}
 
 	@GetMapping("/fase/delete/{id}")
@@ -80,6 +99,15 @@ public class FaseController {
 		mv.addObject("fases", iFaseRepository.findAll());
 
 		return mv;
+	}
+
+	@GetMapping("/fase/cancel")
+	public String cancelar() {
+		editable = true;
+		if (faseEdit != null && faseEdit.getId() != null)
+			faseEdit = null;
+
+		return "redirect:/fase/list";
 	}
 
 }

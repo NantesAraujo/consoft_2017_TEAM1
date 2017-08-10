@@ -27,6 +27,8 @@ public class MembroComiteController {
 
 	MembroComite membroComiteEdit = new MembroComite();
 
+	private boolean editable = true;
+
 	@RequestMapping("/membroComite/new")
 	public ModelAndView novoMembro() {
 		MembroComite membroComite = new MembroComite();
@@ -39,6 +41,7 @@ public class MembroComiteController {
 		ModelAndView model = new ModelAndView("novoMembro");
 		model.addObject("membroComite", membroComite);
 		model.addObject("comites", comites);
+		model.addObject("edicao", editable);
 		return model;
 	}
 
@@ -57,6 +60,15 @@ public class MembroComiteController {
 	public String edit(@PathVariable("id") Long id) {
 
 		membroComiteEdit = iMembroComiteRepository.findOne(id);
+
+		return "redirect:/membroComite/new";
+	}
+
+	@GetMapping("/membroComite/view/{id}")
+	public String view(@PathVariable("id") Long id) {
+
+		membroComiteEdit = iMembroComiteRepository.findOne(id);
+		editable = false;
 
 		return "redirect:/membroComite/new";
 	}
@@ -80,6 +92,7 @@ public class MembroComiteController {
 
 	@GetMapping("/membroComite/cancel")
 	public String cancelar() {
+		editable = true;
 		if (membroComiteEdit != null && membroComiteEdit.getId() != null)
 			membroComiteEdit = null;
 
