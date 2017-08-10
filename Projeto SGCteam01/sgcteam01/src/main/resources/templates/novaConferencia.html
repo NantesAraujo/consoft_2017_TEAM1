@@ -19,17 +19,17 @@
         		</div>
 	        	<div class="panel panel-default">
 	        		<div class="panel panel-heading">
-	        			Cadastro de Conferência
+	        			Cadastro de Conferencia
 	        		</div>
 	        		
-	        		<form class="form-horizontal" th:action="@{/conferencia/save}" method="POST">
+	        		<form class="form-horizontal" th:action="@{/conferencia/save}" method="POST" th:object="${conferencia}">
                           <!-- Tab panes -->
                           <div class="tab-content">
                           
                           		<div class="form-group">
-							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" hidden="true" >id:</label>
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" hidden="true">id:</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="Titulo da conferência" name="id" type="hidden"/>
+							    		<input class="form-control" placeholder="Titulo da conferencia" name="id" th:field="*{id}" type="hidden"/>
 							    	</div>
 							    	<span class="col-xs-2 col-md-4" /> 
 							    </div>
@@ -37,49 +37,49 @@
 					            <div class="form-group">
 							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Idioma:</label>
 							    	<div class="col-sm-3 col-lg-3" >
-							    		<select class="form-control" name="idioma">
-							    			<option value="portuguesBrasil">Português (Brasil)</option>
-							    			<option value="portuguesPortugal">Português (Portugal)</option>
-							    			<option value="ingles">Inglês</option>
+							    		<select class="form-control" name="idioma" th:field="*{idioma}">
+							    			<option value="portuguesBrasil">Portugues (Brasil)</option>
+							    			<option value="portuguesPortugal">Portugues (Portugal)</option>
+							    			<option value="ingles">Ingles</option>
 							    			<option value="espanhol">Espanhol</option>
 							    		</select>
 							    	</div>
 							    </div>
-					                		
+							    
 					            <div class="form-group">
-							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">Título da Conferência:*</label>
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">Titulo da Conferencia:*</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="Titulo da conferência" name="titulo" />
+							    		<input class="form-control" placeholder="Titulo da conferencia" name="titulo" th:field="*{titulo}"/>
 							    	</div>
 							    	<span class="col-xs-2 col-md-4" /> 
 							    </div>
 							                
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							    		tópicos gerais:*
+							    		topicos gerais:*
 							    	</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="tópicos gerais" name="topicoGerais"/>
+							    		<input class="form-control" placeholder="topicos gerais" name="topicoGerais" th:field="*{topicoGerais}"/>
 							    	</div>
 							    	<span class="col-xs-6 col-md-4" /> 
 							    </div>     
 							                
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							    		Página Web:
+							    		Pagina Web:
 							    	</label>
 							    	<div class="col-sm-10 col-lg-8" >
-							    		<input class="form-control" placeholder="endereço web" name="paginaweb" />
+							    		<input class="form-control" placeholder="endereco web" name="paginaweb" th:field="*{paginaWeb}"/>
 							    	</div>
 							    	<span class="col-xs-6 col-md-4" /> 
 							    </div>     
 							                
 							    <div class="form-group">
 							            <label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							            	Descrição:
+							            	Descricao:
 							            </label>
 							            <div class="col-sm-10 col-lg-8">
-							        	<textarea rows="3" class="form-control" name="descricao" />
+							        	<textarea rows="3" class="form-control" name="descricao" th:field="*{descricao}"/>
 							    	</div>
 							    </div>
 					
@@ -88,7 +88,7 @@
 					                	Nome Organizador:
 					                </label>
 							        <div class="col-sm-10 col-lg-8" >
-							        	<input class="form-control" placeholder="nome organizador" name="nomeOrganizador"/>
+							        	<input class="form-control" placeholder="nome organizador" name="nomeOrganizador" th:field="*{nomeOrganizador}"/>
 							        </div>
 						            <span class="col-xs-6 col-md-4" /> 
 						        </div>
@@ -98,17 +98,17 @@
 							        	Email contato:
 							    	</label>
 							        <div class="col-sm-10 col-lg-8" >
-							        	<input class="form-control" placeholder="email de contato" name="emailContato" />
+							        	<input class="form-control" placeholder="email de contato" name="emailContato" th:field="*{emailContato}"/>
 							        </div>
 							    	<span class="col-xs-6 col-md-4"></span> 
 							    </div>
 							
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">
-							            	Cidade realização:
+							            	Cidade realizacao:
 							        </label>
 							        <div class="col-sm-10 col-lg-8" >
-							            	<input class="form-control" placeholder="cidade" name="cidade" />
+							            	<input class="form-control" placeholder="cidade" name="cidade" th:field="*{cidade}"/>
 							        </div>
 							    	<div class="help-block with-errors" />
 							    </div>
@@ -116,11 +116,44 @@
 							    <div class="form-group">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label">Estado:</label>
 						        	<div class="col-sm-4 col-lg-3" >
-						            	<input class="form-control" placeholder="estado" name="estado" />
+						            	<input class="form-control" placeholder="estado" name="estado" th:field="*{estado}"/>
 						    		</div>
 								</div>
-							                
+								
+								<div class="form-group">
+							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Tipos participante:</label>
+							    	<div class="col-sm-3 col-lg-3" >
+							    		<select class="form-control" name="participante" th:field="*{participante}">
+							    			<option value="estudantes">Estudante</option>
+							    			<option value="profisionais">Profissionais</option>
+							    			<option value="outros">Outros</option>
+							    		</select>
+							    	</div>
+							    </div>
+							    
 							    <div class="form-group">
+							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Tipos submissoes:</label>
+							    	<div class="col-sm-3 col-lg-3" >
+							    		<select class="form-control" name="tiposSubmissoes" th:field="*{tiposSubmissoes}">
+							    			<option value="fullPaper">full paper</option>
+							    			<option value="shortPaper">short paper</option>
+							    			<option value="destaquePaper">destaque paper</option>
+							    		</select>
+							    	</div>
+							    </div>
+							    
+							    <div class="form-group">
+							    	<label for="idioma" class="col-lg-3 pull-lwft control-label">Tipos eventos:</label>
+							    	<div class="col-sm-3 col-lg-3" >
+							    		<select class="form-control" name="tipoEventos" th:field="*{tipoEventos}">
+							    			<option value="miniCurso">Mini cursos</option>
+							    			<option value="palestras">Palestras</option>
+							    			<option value="workShop">WorkShop</option>
+							    		</select>
+							    	</div>
+							    </div>
+							                
+							    <div class="form-group" th:if="${edicao}">
 							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" />
 						        	<div class="col-sm-4 col-lg-3" >
 							    	<ul class="nav navbar-top-links navbar-right">
@@ -129,6 +162,17 @@
 		                        		</li>
 		                        		<li>
 		                        			<a th:href="@{/conferencia/list}" class="btn btn-sm-10 ">Cancelar</a>
+		                        		</li>
+					        		</ul>
+						    		</div>
+								</div>
+							    
+							    <div class="form-group" th:if="${not edicao}">
+							    	<label for="tamanho" class="col-lg-3 pull-lwft control-label" />
+						        	<div class="col-sm-4 col-lg-3" >
+							    	<ul class="nav navbar-top-links navbar-right">
+		                        		<li>
+		                        			<a th:href="@{/conferencia/list}" class="btn btn-sm-10 ">Voltar</a>
 		                        		</li>
 					        		</ul>
 						    		</div>

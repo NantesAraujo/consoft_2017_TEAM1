@@ -37,7 +37,7 @@
 				    </div>
 				 
 				    <div class="col-md-3">
-				        <a href="/cadastrarFase" class="btn btn-primary pull-right h2">Nova Comite</a>
+				        <a href="/fase/new" class="btn btn-primary pull-right h2">Nova Fase</a>
 				    </div>
 				</div>
 				
@@ -47,18 +47,22 @@
 				            <thead>
 				                <tr>
 				                    <th>#</th>
-	                                <th>Descricao Comite</th>
+	                                <th>Descricao Fase</th>
+	                                <th>Data Inicio</th>
+	                                <th>Data Fim</th>
 				                    <th class="actions">Acoes</th>
 				                 </tr>
 				            </thead>
 				            <tbody>
-				                <tr th:each="comite : ${comites}" class="odd gradeX">
-				                    <td> <span th:text="${comite.id}"></span> </td>
-				                    <td> <span th:text="${comite.descricao}"></span> </td>
+				                <tr th:each="fase : ${fases}" class="odd gradeX">
+				                    <td> <span th:text="${fase.id}"></span> </td>
+				                    <td> <span th:text="${fase.descricao}"></span> </td>
+				                    <td> <span th:text="${fase.dataInicio}"></span> </td>
+				                    <td> <span th:text="${fase.dataFim}"></span> </td>
 				                    <td class="actions">
-				                        <a class="btn btn-success btn-xs" th:href="@{/comite/edit/{id}(id=${comite.id})}">Visualizar</a>
-				                        <a class="btn btn-warning btn-xs" th:href="@{/comite/edit/{id}(id=${comite.id})}" >Editar</a>
-				                   		<a class="delete btn btn-sm btn-danger" th:href="@{/comite/delete/{id}(id=${comite.id})}">Excluir</a>
+				                        <a class="btn btn-success btn-xs" th:href="@{/fase/view/{id}(id=${fase.id})}">Visualizar</a>
+				                        <a class="btn btn-warning btn-xs" th:href="@{/fase/edit/{id}(id=${fase.id})}" >Editar</a>
+				                   		<a class="delete btn btn-sm btn-danger" th:href="@{/fase/delete/{id}(id=${fase.id})}">Excluir</a>
 				                    </td>
 				                </tr>
 				 
@@ -87,7 +91,7 @@
         <!-- /#page-wrapper -->
         
     </div>
-    <div th:include="scritHtml"></div>
+    <div th:include="scriptHtml"></div>
 </body>
 
 </html>
