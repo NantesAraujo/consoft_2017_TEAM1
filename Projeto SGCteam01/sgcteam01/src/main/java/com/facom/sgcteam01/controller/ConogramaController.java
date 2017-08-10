@@ -27,6 +27,8 @@ public class ConogramaController {
 
 	Conograma conogramaEdit = new Conograma();
 
+	private boolean editable = true;
+
 	@RequestMapping("/conograma/new")
 	public ModelAndView novoConograma() {
 		Conograma conograma = new Conograma();
@@ -39,6 +41,7 @@ public class ConogramaController {
 		ModelAndView model = new ModelAndView("novoConograma");
 		model.addObject("conograma", conograma);
 		model.addObject("comites", comites);
+		model.addObject("edicao", editable);
 		return model;
 	}
 
@@ -57,6 +60,15 @@ public class ConogramaController {
 	public String edit(@PathVariable("id") Long id) {
 
 		conogramaEdit = iConogramaRepositor.findOne(id);
+
+		return "redirect:/conograma/new";
+	}
+
+	@GetMapping("/conograma/view/{id}")
+	public String view(@PathVariable("id") Long id) {
+
+		conogramaEdit = iConogramaRepositor.findOne(id);
+		editable = false;
 
 		return "redirect:/conograma/new";
 	}
@@ -80,6 +92,7 @@ public class ConogramaController {
 
 	@GetMapping("/conograma/cancel")
 	public String cancelar() {
+		editable = true;
 		if (conogramaEdit != null && conogramaEdit.getId() != null)
 			conogramaEdit = null;
 

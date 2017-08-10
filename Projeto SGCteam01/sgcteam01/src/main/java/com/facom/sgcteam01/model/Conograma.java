@@ -1,7 +1,6 @@
 package com.facom.sgcteam01.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +21,7 @@ public class Conograma implements Serializable {
 	private String meioComunicacao;
 
 	@Column(name = "data")
-	private Date data;
+	private String data;
 
 	@Column(name = "horario")
 	private String horario;
@@ -43,11 +42,11 @@ public class Conograma implements Serializable {
 		this.meioComunicacao = meioComunicacao;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

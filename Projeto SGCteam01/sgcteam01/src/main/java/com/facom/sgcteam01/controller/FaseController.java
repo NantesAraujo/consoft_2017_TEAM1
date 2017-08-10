@@ -36,7 +36,7 @@ public class FaseController {
 		Fase fase = new Fase();
 
 		if (faseEdit != null && faseEdit.getId() != null) {
-			fase = new Fase(faseEdit.getDescricao(), faseEdit.getDataInicio(), faseEdit.getDataFim());
+			fase = faseEdit;
 		}
 
 		ModelAndView model = new ModelAndView("novaFase");
