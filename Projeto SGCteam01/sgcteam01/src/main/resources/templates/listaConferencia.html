@@ -35,7 +35,7 @@
 				    </div>
 				 
 				    <div class="col-md-3">
-				        <a href="/cadastrarConferencia" class="btn btn-primary pull-right h2">Nova Conferencia</a>
+				        <a href="/conferencia/new" class="btn btn-primary pull-right h2">Nova Conferencia</a>
 				    </div>
 				</div>
 				
@@ -60,7 +60,7 @@
 						            <td> <span th:text="${conf.nomeOrganizador}"></span> </td>
 						            <td> <span th:text="${conf.emailContato}"></span> </td>
 				                    <td class="actions">
-				                        <a class="btn btn-success btn-xs" th:href="@{/conferencia/edit/{id}(id=${conf.id})}">Visualizar</a>
+				                        <a class="btn btn-success btn-xs" th:href="@{/conferencia/view/{id}(id=${conf.id})}">Visualizar</a>
 				                        <a class="btn btn-warning btn-xs" th:href="@{/conferencia/edit/{id}(id=${conf.id})}" >Editar</a>
 			                   		<a class="delete btn btn-sm btn-danger" th:href="@{/conferencia/delete/{id}(id=${conf.id})}">Excluir</a>
 				                    </td>
